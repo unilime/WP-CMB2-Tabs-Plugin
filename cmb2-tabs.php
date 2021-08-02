@@ -9,7 +9,7 @@
  * Description: Tabs for CMB2 boxes.
  * Version: 1.0.4
  * Author: UNILIME
- * Author https://unilime.group/
+ * Author URI: https://unilime.group/
  * License: GPLv2+
  */
 
