@@ -85,3 +85,28 @@
 .widget-content .cmb-tabs-wrap {
     margin: -1px -15px 0px -15px;
 }
+
+.cmb-tabs-wrap.cmb-tabs-vertical .cmb-tabs-alert-message {
+    display: none;
+}
+@media only screen and (max-width: 640px) {
+    .cmb-tabs-wrap.cmb-tabs-vertical {
+        position: relative;
+        overflow: hidden;
+    }
+    .cmb-tabs-wrap.cmb-tabs-vertical .cmb-tabs-alert-message {
+        display: block;
+        padding: 40px 20px;
+        text-align: center;
+        position: absolute;
+        background: rgba(255,255,255,0.9);
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 222;
+        font-size: 18px;
+        font-weight: 600;
+        color: rgb(164, 40, 106);
+    }
+}

@@ -101,6 +101,9 @@ if( !class_exists( 'UL_CMB2_Tabs' ) ) {
          */
         public function after_form( $cmb_id, $object_id, $object_type, $cmb ) {
             if( $cmb->prop( 'tabs' ) && is_array( $cmb->prop( 'tabs' ) ) ) : ?>
+                <?php if($cmb->prop( 'vertical_tabs' )) { ?>
+                    <div class="cmb-tabs-alert-message"><?php esc_html_e( 'To edit this section, please open the site in desktop mode!', 'cmb2-tabs' ); ?></div>
+                <?php } ?>
                 </div> <!-- .cmb-tabs-wrap -->
             <?php endif;
         }
