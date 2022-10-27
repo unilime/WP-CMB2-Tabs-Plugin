@@ -50,11 +50,13 @@ if (!class_exists('UL_CMB2_Tabs')) {
          */
         public function before_form($cmb_id, $object_id, $object_type, $cmb)
         {
-            if ($cmb->prop('tabs') && is_array($cmb->prop('tabs'))) : ?>
+            $tabs = apply_filters('cmb2_tabs_order', $cmb->prop('tabs'), $cmb_id, $cmb);
+
+            if ($tabs && is_array($tabs)) : ?>
                 <div class="cmb-tabs-wrap cmb-tabs-<?php echo(($cmb->prop('vertical_tabs')) ? 'vertical' : 'horizontal') ?>">
                 <div class="cmb-tabs">
 
-                    <?php foreach ($cmb->prop('tabs') as $tab) :
+                    <?php foreach ($tabs as $tab) :
                         $fields_selector = array();
 
                         if (!isset($tab['id'])) {
@@ -78,7 +80,7 @@ if (!class_exists('UL_CMB2_Tabs')) {
                         ?>
 
                         <div id="<?php echo $cmb_id . '-tab-' . $tab['id']; ?>" class="cmb-tab"
-                             data-fields="<?php echo implode(', ', $fields_selector); ?>">
+                             data-fields="<?php echo implode(', ', $fields_selector); ?>" draggable="true">
 
                             <?php if (isset($tab['icon']) && !empty($tab['icon'])) :
                                 $tab['icon'] = strpos($tab['icon'], 'dashicons') !== false ? 'dashicons ' . $tab['icon'] : $tab['icon'] ?>
